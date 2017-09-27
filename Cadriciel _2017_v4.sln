@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadriciel_2017_v4", "Cadriciel_2017_v4.csproj", "{C47A9900-8F33-4579-4DF4-F91117288943}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadriciel_2017_v4.Editor", "Cadriciel_2017_v4.Editor.csproj", "{45B15ECB-4ED0-3F01-D276-A0E179834388}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C47A9900-8F33-4579-4DF4-F91117288943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C47A9900-8F33-4579-4DF4-F91117288943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C47A9900-8F33-4579-4DF4-F91117288943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C47A9900-8F33-4579-4DF4-F91117288943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45B15ECB-4ED0-3F01-D276-A0E179834388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45B15ECB-4ED0-3F01-D276-A0E179834388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45B15ECB-4ED0-3F01-D276-A0E179834388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45B15ECB-4ED0-3F01-D276-A0E179834388}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
