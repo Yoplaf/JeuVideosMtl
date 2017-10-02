@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuVideosMtlTesNveauNom", "JeuVideosMtlTesNveauNom.csproj", "{33B90EDA-A58E-3FCC-2A6B-7ED4D8F67DD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuVideosMtlTesNveauNom.Editor", "JeuVideosMtlTesNveauNom.Editor.csproj", "{F9876378-B6BF-E0FD-A01B-1F6733D8F885}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33B90EDA-A58E-3FCC-2A6B-7ED4D8F67DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33B90EDA-A58E-3FCC-2A6B-7ED4D8F67DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33B90EDA-A58E-3FCC-2A6B-7ED4D8F67DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33B90EDA-A58E-3FCC-2A6B-7ED4D8F67DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9876378-B6BF-E0FD-A01B-1F6733D8F885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9876378-B6BF-E0FD-A01B-1F6733D8F885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9876378-B6BF-E0FD-A01B-1F6733D8F885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9876378-B6BF-E0FD-A01B-1F6733D8F885}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

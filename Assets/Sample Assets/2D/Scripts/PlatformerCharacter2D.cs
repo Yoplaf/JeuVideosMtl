@@ -5,8 +5,9 @@ public class PlatformerCharacter2D : MonoBehaviour
 	bool facingRight = true;							// For determining which way the player is currently facing.
 
 	[SerializeField] float maxSpeed = 10f;				// The fastest the player can travel in the x axis.
-	[SerializeField] float jumpForce = 5000f;			// Amount of force added when the player jumps.	
-	[SerializeField] int nombreSautMax = 3;
+	[SerializeField] float jumpForce = 800f;			// Amount of force added when the player jumps.	
+    [SerializeField] float jumpForceLimit = 1600f;     //limite de force pour saut charge
+    [SerializeField] int nombreSautMax = 3;
 	[SerializeField] float wallForce = 800f;
 
 	[Range(0, 1)]
@@ -26,6 +27,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 	Transform wallCheck;
 	float wallRadius = .5f;							
 	bool wall = false;
+	float crouchTime = 1; //pour saut charge
+    
 
 
     void Awake()
@@ -89,11 +92,34 @@ public class PlatformerCharacter2D : MonoBehaviour
 				Flip();
 		}
 
+        // SAUT CHARGE
+        if (crouch)
+        {
+            // Si le personnage est accroupi, préparer le saut chargé
+             crouchTime = crouchTime + (float)0.01;
+        }
+
+        // Relacher le temps d'accroupisseent et de chargement de saut dès que le joueur se relève
+        if (!crouch)
+        {
+            crouchTime = 1;
+        }
+
         // If the player should jump...
         if (grounded && jump) {
             // Add a vertical force to the player.
             anim.SetBool("Ground", false);
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+            
+            //pour saut charge
+            float jumpForceEffective = jumpForce;
+            jumpForceEffective = (crouchTime > 1 ? crouchTime * jumpForce : jumpForce);
+            if(jumpForceEffective > jumpForceLimit)
+            {
+                jumpForceEffective = jumpForceLimit;
+            }
+            Debug.Log("lo " + jumpForceEffective);
+
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForceEffective));
 
 			compteurSaut = 1;
 		}
@@ -108,19 +134,29 @@ public class PlatformerCharacter2D : MonoBehaviour
 		// SAUT MURAL
 		if(!grounded && wall && jump) {
 			// Add a vertical force to the player.
+
+            
 			GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+			Flip();
+
+			// The Speed animator parameter is set to the absolute value of the horizontal input.
+			anim.SetFloat("Speed", Mathf.Abs(move));
+
+			// Move the character
+			GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
+            
+
 			// Add a horizontal force to the player.
-			if(facingRight) {
+			/*if(facingRight) {
 				GetComponent<Rigidbody2D>().AddForce(new Vector2(-wallForce, 0f));
 			}
 			else {
 				GetComponent<Rigidbody2D>().AddForce(new Vector2(+wallForce, 0f));
-			}
+			}*/
 		}
 
-		// SAUT CHARGE
-		while ()	}
 
+	}
 
 	
 	void Flip ()
